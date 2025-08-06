@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Provider store={store}>
-          <div className="min-h-screen flex items-center justify-center">
+          <div className="">
             {children}
           </div>
         </Provider>
