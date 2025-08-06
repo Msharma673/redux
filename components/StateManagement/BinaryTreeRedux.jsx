@@ -4,7 +4,7 @@ import { incrementNode, decrementNode } from '../../redux/store';
 
 const ReduxTreeNode = ({ nodeId, level, children }) => {
   const dispatch = useDispatch();
-  const nodeValue = useSelector(state => state.nodes[nodeId]);
+  const nodeValue = useSelector(state => state.tree.nodes[nodeId]);
 
   const handleIncrement = () => {
     dispatch(incrementNode(nodeId));
@@ -90,8 +90,8 @@ const ReduxTreeNode = ({ nodeId, level, children }) => {
 };
 
 const BinaryTreeRedux = () => {
-  const treeStructure = useSelector(state => state.treeStructure);
-  const allNodes = useSelector(state => state.nodes);
+  const treeStructure = useSelector(state => state.tree.treeStructure);
+  const allNodes = useSelector(state => state.tree.nodes);
 
   const renderNode = (nodeId, level = 0) => {
     const nodeData = treeStructure[nodeId];
