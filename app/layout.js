@@ -3,14 +3,16 @@ import { Provider } from 'react-redux';
 import { store } from '../redux/store';
 import './globals.css';  // Tailwind CSS
 
-const Layout = ({ children }) => {
+export default function RootLayout({ children }) {
   return (
-    <Provider store={store}>
-      <div className="min-h-screen flex items-center justify-center">
-        {children}
-      </div>
-    </Provider>
+    <html lang="en">
+      <body>
+        <Provider store={store}>
+          <div className="min-h-screen flex items-center justify-center">
+            {children}
+          </div>
+        </Provider>
+      </body>
+    </html>
   );
-};
-
-export default Layout;
+}
